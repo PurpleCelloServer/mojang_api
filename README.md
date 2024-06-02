@@ -38,8 +38,8 @@ Purple Cello interface for the Mojang API in rust
 - [ ] [Connect Xbox Live](https://wiki.vg/Mojang_API#Connect_Xbox_Live)
 
 ### Multiplayer Authentication
-- [ ] [Client Authentication](https://wiki.vg/Protocol_Encryption#Client)
-- [ ] [Server Authentication](https://wiki.vg/Protocol_Encryption#Server)
+- [x] [Client Authentication](https://wiki.vg/Protocol_Encryption#Client)
+- [x] [Server Authentication](https://wiki.vg/Protocol_Encryption#Server)
 
 ### Game Files
 - [ ] [Game Versions](https://wiki.vg/Game_files#Game)

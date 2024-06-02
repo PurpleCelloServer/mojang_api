@@ -80,7 +80,7 @@ pub struct ProfileProperty {
 }
 
 #[derive(Serialize, Deserialize)]
-struct ProfilePropertyPrivate {
+pub(crate) struct ProfilePropertyPrivate {
     pub name: String,
     pub value: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -124,7 +124,7 @@ struct UUIDToProfilePrivate {
     pub errorMessage: Option<String>,
 }
 
-fn get_profile_value(properties: Vec<ProfilePropertyPrivate>)
+pub(crate) fn get_profile_value(properties: Vec<ProfilePropertyPrivate>)
     -> Result<Vec<ProfileProperty>, Box<dyn std::error::Error>>
 {
     let mut output: Vec<ProfileProperty> = Vec::new();
