@@ -5,9 +5,6 @@
 use std::fmt;
 use reqwest;
 use serde::{Serialize, Deserialize};
-use crypto::digest::Digest;
-use sha1::Sha1;
-use num_bigint::BigInt;
 
 use crate::accounts::{
     ProfileProperty,
@@ -28,17 +25,6 @@ impl fmt::Display for AuthError {
     }
 }
 impl std::error::Error for AuthError {}
-
-pub async fn server_id_hash(
-    server_id: &[u8],
-    shared_secret: &[u8],
-    public_key: &[u8],
-) -> String {
-    let hash_data = [server_id,shared_secret,public_key].concat();
-    let hash = BigInt::from_signed_bytes_be(
-        &Sha1::digest(hash_data)).to_str_radix(16);
-    hash
-}
 
 #[derive(Serialize, Deserialize)]
 struct PlayerJoining {
